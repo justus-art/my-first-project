@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/2.1.7/css/dataTables.dataTables.css"
+    />
+  </head>
+  <body>
+    <table id="table_id">
+      <thead>
+        <tr>
+          <th>saleid</th>
+          <th>productid</th>
+          <th>quantity</th>
+          <th>created at</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for sale in sales%}
+        <tr>
+          <td>{{sale[0]}}</td>
+          <td>{{sale[1]}}</td>
+          <td>{{sale[2]}}</td>
+          <td>{{sale[3]}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.7/js/dataTables.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#table_id").DataTable();
+      });
+    </script>
+  </body>
+</html>
